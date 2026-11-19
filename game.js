@@ -3,6 +3,9 @@
    Move mouse to aim · Click to shoot · Hit the heart
    ===================================================== */
 
+// Lock body scroll while game is active
+document.body.style.overflow = 'hidden';
+
 (function () {
   const overlay  = document.getElementById('intro-overlay');
   const canvas   = document.getElementById('gameCanvas');
@@ -288,6 +291,9 @@
       setTimeout(() => {
         overlay.style.display = 'none';
         cancelAnimationFrame(raf);
+        // ✅ Re-enable body scroll after game ends
+        document.body.style.overflow = '';
+        window.removeEventListener('touchmove', onTouchMove);
       }, 1300);
     }, 900);
   }
@@ -380,17 +386,19 @@
     mouse.y = e.clientY;
   });
 
-  // Touch support
-  window.addEventListener('touchmove', e => {
+  // Touch support — named function so we can remove it later
+  function onTouchMove(e) {
+    if (done) return;          // stop blocking once game is over
     e.preventDefault();
     mouse.x = e.touches[0].clientX;
     mouse.y = e.touches[0].clientY;
-  }, { passive: false });
+  }
+  window.addEventListener('touchmove', onTouchMove, { passive: false });
 
   canvas.addEventListener('click', shoot);
 
   canvas.addEventListener('touchend', e => {
-    e.preventDefault();
+    if (!done) e.preventDefault();
     shoot();
   });
 
