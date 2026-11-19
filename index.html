@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday, Saneyyy! 🎂❤️</title>
+  <title>Happy Birthday, Saneyyy! ❤️</title>
   <meta name="description" content="A special birthday message for Sana — my Ceepe ❤️" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,66 +12,65 @@
 </head>
 <body>
 
-  <!-- ============ CUPID ARROW GAME INTRO ============ -->
+  <!-- ======== INTRO GAME ======== -->
   <div id="intro-overlay">
     <canvas id="gameCanvas"></canvas>
     <div id="intro-hint">
       <span class="hint-icon">🏹</span>
       <p>Aim &amp; shoot the arrow at the heart<br/>to open your surprise</p>
-      <span class="hint-sub">Move mouse · Click to shoot</span>
+      <span class="hint-sub">Move · tap to shoot</span>
     </div>
-    <!-- Burst ripple element -->
     <div id="burst-ripple"></div>
   </div>
 
-  <!-- ============ HERO SECTION ============ -->
+  <!-- ======== HERO ======== -->
   <section class="hero" id="hero">
-    <!-- Stars canvas -->
     <canvas id="starCanvas"></canvas>
-
-    <!-- Floating hearts -->
     <div class="floating-hearts" aria-hidden="true"></div>
 
-    <!-- Hero content -->
     <div class="hero-content">
       <p class="pre-title">To my favourite person in the world</p>
       <h1 class="main-title">
         <span class="line1">Happy Birthday,</span>
         <span class="line2">Saneyyy ❤️</span>
       </h1>
-      <p class="subtitle">November 22, 2005 &nbsp;·&nbsp; Turning <span id="age">21</span> today</p>
-      <div class="scroll-cue" aria-label="Scroll down">
-        <span>scroll down</span>
+      <p class="subtitle">November 22 &nbsp;·&nbsp; 2005</p>
+      <div class="scroll-cue">
         <div class="arrow-bounce">↓</div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PHOTO SECTION ============ -->
+  <!-- ======== PHOTO ======== -->
   <section class="photo-section" id="photo-section">
     <div class="photo-bg-overlay"></div>
     <div class="photo-wrapper">
-      <img src="photo.jpg" alt="Us under the stars 🌌" class="couple-photo" id="couple-photo" />
+      <div class="photo-frame">
+        <img src="photo.jpg" alt="Us under the stars" class="couple-photo" id="couple-photo" />
+      </div>
       <div class="photo-caption">
-        <span class="ceepee-tag">Ceepe &amp; Me</span>
+        <span class="ceepee-tag">Ceepe &amp; Me ✨</span>
         <p>Under a million stars, still not as bright as you.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ MESSAGE SECTION ============ -->
+  <!-- ======== MESSAGE ======== -->
   <section class="message-section" id="message">
-    <div class="message-card">
-      <div class="card-deco top-deco">❝</div>
+    <div class="message-card" data-reveal>
+
+      <div class="card-top-line"></div>
+
+      <div class="open-quote">"</div>
 
       <div class="message-body">
         <p>I really wish I could be there with you today, see that pretty smile of yours and make you feel special in person. But unfortunately, my exams and the distance have other plans for me.</p>
 
-        <p>I know we've had our fair share of fights, arguments and silly misunderstandings, but somehow, even after all that, I've only found more reasons to love you. Maybe we're not perfect, and we definitely aren't the best at avoiding fights&nbsp;😅, but I wouldn't trade all those little moments for anything.</p>
+        <p>I know we've had our fair share of fights, arguments and silly misunderstandings, but somehow, even after all that, I've only found more reasons to love you. Maybe we're not perfect, and we definitely aren't the best at avoiding fights 😅, but I wouldn't trade all those little moments for anything.</p>
 
         <p>I love your smile more than you probably realise, and I hope I get to see it a million more times.</p>
 
-        <p>These are just two little gifts, but I hope every time you wear them, you think of me. And please take good care of them. <em>Don't make me regret trusting you with expensive responsibilities.</em>&nbsp;😤</p>
+        <p>These are just two little gifts, but I hope every time you wear them, you think of me. And please take good care of them. <em>Don't make me regret trusting you with expensive responsibilities.</em> 😤</p>
 
         <p>I miss you, and I wish I could be there to annoy you in person instead of missing you from here.</p>
 
@@ -79,33 +78,18 @@
       </div>
 
       <div class="signature">
-        <p>Love youuu <span class="ceepee-inline">Ceepeeyee</span> ! ❤️</p>
+        Love youuu <span class="sig-name">Ceepeeyee</span> ❤️
       </div>
 
-      <div class="card-deco bottom-deco">❞</div>
     </div>
   </section>
 
-  <!-- ============ COUNTDOWN SECTION ============ -->
-  <section class="countdown-section" id="countdown-section">
-    <h2 class="section-title">🎂 Age Counter</h2>
-    <p class="section-sub">Every second lived beautifully ✨</p>
-    <div class="countdown-grid" id="age-counter">
-      <div class="count-box"><span id="years">0</span><label>Years</label></div>
-      <div class="count-box"><span id="months">0</span><label>Months</label></div>
-      <div class="count-box"><span id="days">0</span><label>Days</label></div>
-      <div class="count-box"><span id="hours">0</span><label>Hours</label></div>
-      <div class="count-box"><span id="minutes">0</span><label>Minutes</label></div>
-      <div class="count-box"><span id="seconds">0</span><label>Seconds</label></div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
+  <!-- ======== FOOTER ======== -->
   <footer class="footer">
-    <div class="footer-hearts">❤️ 🌙 ❤️</div>
-    <p class="footer-name">For <span class="ceepee-inline">Sana</span> — always.</p>
-    <p class="footer-nick">( my Ceepe 🤍 )</p>
-    <p class="footer-copy">Made with every piece of love I have &nbsp;·&nbsp; 2026</p>
+    <div class="footer-dot">❤️</div>
+    <p class="footer-for">For <em>Sana</em></p>
+    <p class="footer-nick">my Ceepe 🤍</p>
+    <p class="footer-copy">made with love · november 2026</p>
   </footer>
 
   <script src="game.js"></script>
